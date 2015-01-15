@@ -16,7 +16,7 @@ page = 'config/stylesheet'
 
 regex_date = 'DATE: ([A-Z\/]{5,7}) ([0-9]+)'
 
-dates = [
+months = [
         'JAN/FEB',
         'MAR/APR',
         'MAY/JUN',
@@ -45,9 +45,9 @@ def replace(match):
         return 'ERROR'
     else:
         #Assigns new month
-        month = dates[(dates.index(match.group(1)) + 1) % 7]
+        month = months[(months.index(match.group(1)) + 1) % 7]
         #Increments year if index of month is 0 (== tuesday)
-        date = str(int(match.group(2))+1) if dates.index(month) is 0 else match.group(2)
+        date = str(int(match.group(2))+1) if months.index(month) is 0 else match.group(2)
         logger.info(month + ' ' + date)
         return 'DATE: {} {}'.format(month, date)
 
