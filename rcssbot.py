@@ -6,12 +6,12 @@ import logging
 import argparse
 import re
 
-user_agent = 'empire powers bot v1.0 by /u/nath_schwarz'
+user_agent = 'reddit css change bot v0.1 by /u/nath_schwarz'
 
 username = ''
 password = ''
 
-subreddit = 'empirepowers'
+subreddit = ''
 page = 'config/stylesheet'
 
 regex_date = 'DATE: ([A-Z\/]{5,7}) ([0-9]+)'
