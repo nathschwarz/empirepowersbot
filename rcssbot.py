@@ -60,7 +60,10 @@ def push_stylesheet(stylesheet):
     r.edit_wiki_page(subreddit, page, stylesheet)
 
 def do():
-    push_stylesheet(re.sub(regex_date, replace, pull_stylesheet()))
+    css = pull_stylesheet()
+    css = re.sub(regex_date, replace, css)
+    css = re.sub('&gt;', '>', css)
+    push_stylesheet(css)
 
 def main():
     parser = argparse.ArgumentParser()
